@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dashboard</title>
+        <meta name="viewpoint" content="width=device-width, initial-scalse=1.0">
+        <link href="dashboard.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+        <body>
+            <h1>Dashboard</h1>
+                <form action="dashboard.html">
+                <fieldset>
+                   <p>Employee ID: <input type="number" required min="1" max="10"/></p>
+                   <p>First Name: <input type="text" required/></p>
+                   <p>Last Name: <input type="text" required/></p>
+                   <p>Age: <input type="number" required min="16" max="60"/></p>
+                   
+                   <label>Gender: 
+                       <select>
+                           <option value="">select one </option>
+                           <option value="1">Man</option>
+                           <option value="2">Woman</option>
+                           <option value="3">Transgender</option>
+                           <option value="4">Non-binary/non-conforming</option>
+                           <option value="5">Prefer not to respond</option>
+                       </select>
+                   </label>
+                   <p>Height: <input type="number" required min="1" max="8"/> feet
+                            <input type="number" required min="0" max="100"/> inch
+                   </p>
+                   <p>Weight: <input type="number" required min="1" max="500"/> pounds</p>
+                   <p>Body temperature: <input type="number" required min="94" max="104"/> degrees F</p>
+                   <p>Pulse rate: <input type="number" required min="60" max="100"/></p>
+                   <p>Blood Pressure: <input type="number" required min="100" max="200"/> Systolic 
+                                    <input type="number" required min="60" max="150"/> Diastolic
+                   </p>
+                   <p>Respiration rate: <input type="number" required min="10" max="28"/></p>
+                   <p>Average exercise hours/week: <input type="number" required /></p>
+                   <p>Vacation Balance: <input type="number" required /> hrs</p>
+                   <p>Average work hours/week: <input type="number" required/></p>
+                </fieldset>
+                <button type="submit">Submit</button> 
+                </form>
+        </body>
+    
+</html>
