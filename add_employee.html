@@ -8,40 +8,41 @@
     </head>
 
         <body>
-            <h1>Add Employee</h1>
-                <form action="add_employee.html">
+            <h2>Employee</h2>
+               <form>
                 <fieldset>
-                   <label>Employee ID: <input type="number" required min="1" max="10"/></label>
-                   <label>First Name: <input type="text" required/></label>
-                   <label>Last Name: <input type="text" required/></label>
-                   <label>Age: <input type="number" required min="16" max="60"/></label>
+                   <label for="id">Employee ID: <input type="number" id="id" required min="1" max="10"/></label>
+                   <label for="firstName">First Name: <input type="text" id="firstName" required/></label>
+                   <label for="lastName">Last Name: <input type="text" id="lastName" required/></label>
+                   <label for="age">Age: <input type="number" id="age" required min="16" max="60"/></label>
                    
-                   <label>Gender: 
+                   <label for="gender" >Gender: 
                        <select>
-                           <option value="">select one </option>
-                           <option value="1">Man</option>
-                           <option value="2">Woman</option>
-                           <option value="3">Transgender</option>
-                           <option value="4">Non-binary/non-conforming</option>
-                           <option value="5">Prefer not to respond</option>
+                           <option value="" id="gender">select one </option>
+                           <option value="1" id="gender">Man</option>
+                           <option value="2" id="gender">Woman</option>
+                           <option value="3" id="gender">Transgender</option>
+                           <option value="4" id="gender">Non-binary/non-conforming</option>
+                           <option value="5" id="gender">Prefer not to respond</option>
                        </select>
                    </label>
-                   <label>Height: <input type="number" required min="1" max="8"/> feet
-                            <input type="number" required min="0" max="100"/> inch
+                   <label for="height">Height: <input type="number" id="height1" required min="1" max="8"/> feet
+                            <input type="number" id="height2" required min="0" max="100"/> inch
                    </label>
-                   <label>Weight: <input type="number" required min="1" max="500"/> pounds</label>
-                   <label>Body temperature: <input type="number" required min="94" max="104"/> degrees F</label>
-                   <label>Pulse rate: <input type="number" required min="60" max="100"/></label>
-                   <label>Blood Pressure: <input type="number" required min="100" max="200"/> Systolic 
-                                    <input type="number" required min="60" max="150"/> Diastolic
+                   <label for="weight">Weight: <input type="number" id="weight" required min="1" max="500"/> pounds</label>
+                   <label for="bodyTemp">Body temperature: <input type="number" id="bodyTemp" required min="94" max="104"/> degrees F</label>
+                   <label for="pulseRate">Pulse rate: <input type="number" id="pulseRate" required min="60" max="100"/></label>
+                   <label for="bloodPrssr">Blood Pressure: <input type="number" id="bloodPrssr1" required min="100" max="200"/> Systolic 
+                                    <input type="number" id="bloodPrssr2" required min="60" max="150"/> Diastolic
                    </label>
-                   <label>Respiration rate: <input type="number" required min="10" max="28"/></label>
-                   <label>Average exercise hours/week: <input type="number" required /></label>
-                   <label>Vacation Balance: <input type="number" required /> hrs</label>
-                   <label>Average work hours/week: <input type="number" required/></label>
+                   <label for="respRate">Respiration rate: <input type="number" id="respRate" required min="10" max="28"/></label>
+                   <label for="avgExercise">Average exercise hours/week: <input type="number" id="avgExercise" required /></label>
+                   <label for="vacBalnc">Vacation Balance: <input type="number" id="vacBalnc" required /> hrs</label>
+                   <label for="avgWork">Average work hours/week: <input type="number" id="avgWork" required/></label>
                 </fieldset>
-                <button type="submit">Submit</button> 
-                </form>
+                   <button type="submit" id="click">Submit</button> 
+                
+              </form>
                 <script src ="index.js"></script>
         </body>
     
