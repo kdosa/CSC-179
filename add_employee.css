@@ -10,7 +10,6 @@ body{
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
    
-    
 }
 
 input,select{
@@ -26,19 +25,16 @@ input,select{
 fieldset{
     border-style:outset;
     border-color: black;
+    
 }
-
-/*button{
-    border-style:groove;
-    background-color:rgb(250, 233, 215);
-    font-size: large;
-    border-color: black;
-    margin-top: 0.1em;
-    margin-left: 0.1em;
-}*/
 
 label{
     display:block;
     margin-block: 1em;
 
+}
+
+a{
+    color:black;
+    text-decoration-line: none;
 }
