@@ -3,46 +3,62 @@
     <head>
         <meta charset="utf-8">
         <title>Add Employee</title>
-        <meta name="viewpoint" content="width=device-width, initial-scalse=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="add_employee.css" rel="stylesheet" type="text/css"/>
     </head>
 
         <body>
-            <h2>Add Employee</h2>
-               <form>
+            
+               <form name="employee">
                 <fieldset>
                    <label for="id">Employee ID: <input type="number" id="id" required min="1" max="10"/></label>
                    <label for="firstName">First Name: <input type="text" id="firstName" required/></label>
                    <label for="lastName">Last Name: <input type="text" id="lastName" required/></label>
                    <label for="age">Age: <input type="number" id="age" required min="16" max="60"/></label>
                    
-                   <label for="gender" >Gender: 
-                       <select>
-                           <option value="" id="gender">select one </option>
-                           <option value="1" id="gender">Man</option>
-                           <option value="2" id="gender">Woman</option>
-                           <option value="3" id="gender">Transgender</option>
-                           <option value="4" id="gender">Non-binary/non-conforming</option>
-                           <option value="5" id="gender">Prefer not to respond</option>
+                   <label>Gender: 
+                       <select id="gender">
+                           <option value="">select one </option>
+                           <option value="1">Man</option>
+                           <option value="2">Woman</option>
+                           <option value="3">Transgender</option>
+                           <option value="4">Non-binary/non-conforming</option>
+                           <option value="5">Prefer not to respond</option>
                        </select>
                    </label>
-                   <label for="height">Height: <input type="number" id="height1" required min="1" max="8"/> feet
-                            <input type="number" id="height2" required min="0" max="100"/> inch
-                   </label>
-                   <label for="weight">Weight: <input type="number" id="weight" required min="1" max="500"/> pounds</label>
-                   <label for="bodyTemp">Body temperature: <input type="number" id="bodyTemp" required min="94" max="104"/> degrees F</label>
-                   <label for="pulseRate">Pulse rate: <input type="number" id="pulseRate" required min="60" max="100"/></label>
-                   <label for="bloodPrssr">Blood Pressure: <input type="number" id="bloodPrssr1" required min="100" max="200"/> Systolic 
-                                    <input type="number" id="bloodPrssr2" required min="60" max="150"/> Diastolic
-                   </label>
-                   <label for="respRate">Respiration rate: <input type="number" id="respRate" required min="10" max="28"/></label>
-                   <label for="avgExercise">Average exercise hours/week: <input type="number" id="avgExercise" required /></label>
-                   <label for="vacBalnc">Vacation Balance: <input type="number" id="vacBalnc" required /> hrs</label>
-                   <label for="avgWork">Average work hours/week: <input type="number" id="avgWork" required/></label>
+                   
+                   <label for="height">Height: <input type="number" id="height" required min="50" max="80"/> inches</label>
+                   <label for="weight">Weight: <input type="number" id="weight" required min="100" max="400"/> pounds</label>
+                   <label for="bodyTemp">Body temperature: <input type="number" id="bodyTemp" required min="96" max="102"/> degrees F</label>
+                   <label for="pulseRate">Pulse rate: <input type="number" id="pulseRate" required min="50" max="120"/> bpm</label>
+                  <!-- <label for="bloodPrssr">Blood Pressure: <input type="number" id="bloodPrssr" required/> Systolic/Diastolic</label>-->
+                  <label>Blood Pressure:
+                    <select id="systolic">
+                        <option value="">select one </option>
+                        <option value="1">below 120</option>
+                        <option value="2">120-129</option>
+                        <option value="3">130-139</option>
+                        <option value="4">140 or higher </option>
+                        <option value="5">above 180</option>
+                    </select> Systolic
+                    <select id="diastolic">
+                        <option value="">select one </option>
+                        <option value="1">below 80</option>
+                        <option value="2">80-89</option>
+                        <option value="3">90 or higher</option>
+                        <option value="4">above 120</option>
+                    </select> Diastolic
+                </label>
+                   <label for="respRate">Respiration rate: <input type="number" id="respRate" required min="10" max="18"/> bpm</label>
+                   <label for="avgExercise">Average exercise hours/week: <input type="number" id="avgExercise" min="0" max="30" required /></label>
+                   <label for="vacBalnc">Vacation Balance: <input type="number" id="vacBalnc" min="0" max="100" required /> hrs</label>
+                   <label for="avgWork">Average work hours/week: <input type="number" id="avgWork" min="0" max="80" required/></label>
                 </fieldset>
+             
                    <button type="submit" id="click">Submit</button> 
                 
               </form>
+              
                 <script src ="index.js"></script>
         </body>
     
