@@ -2,6 +2,7 @@
     //form can be filled and stored on local storage 
     // run this command "localStorage.getItem('itemsJson')" on console
     // to check the data submitted on form 
+    
     add = document.getElementById("click");
 
     add.addEventListener("click", ()=>{

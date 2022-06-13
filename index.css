@@ -39,3 +39,9 @@
     th, td {
     padding: 70px;
     }
+
+    a{
+      color: black;
+      text-decoration-line: none;
+      
+    }
