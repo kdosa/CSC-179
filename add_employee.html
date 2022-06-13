@@ -31,24 +31,8 @@
                    <label for="weight">Weight: <input type="number" id="weight" required min="100" max="400"/> pounds</label>
                    <label for="bodyTemp">Body temperature: <input type="number" id="bodyTemp" required min="96" max="102"/> degrees F</label>
                    <label for="pulseRate">Pulse rate: <input type="number" id="pulseRate" required min="50" max="120"/> bpm</label>
-                  <!-- <label for="bloodPrssr">Blood Pressure: <input type="number" id="bloodPrssr" required/> Systolic/Diastolic</label>-->
-                  <label>Blood Pressure:
-                    <select id="systolic">
-                        <option value="">select one </option>
-                        <option value="1">below 120</option>
-                        <option value="2">120-129</option>
-                        <option value="3">130-139</option>
-                        <option value="4">140 or higher </option>
-                        <option value="5">above 180</option>
-                    </select> Systolic
-                    <select id="diastolic">
-                        <option value="">select one </option>
-                        <option value="1">below 80</option>
-                        <option value="2">80-89</option>
-                        <option value="3">90 or higher</option>
-                        <option value="4">above 120</option>
-                    </select> Diastolic
-                </label>
+                   <label for="bloodPrssr">Blood Pressure: <input type="number" id="systolic" required min="100" max="200"/> Systolic
+                                                           <input type="number" id="diastolic" required min="100" max="200"/> Diastolic</label>
                    <label for="respRate">Respiration rate: <input type="number" id="respRate" required min="10" max="18"/> bpm</label>
                    <label for="avgExercise">Average exercise hours/week: <input type="number" id="avgExercise" min="0" max="30" required /></label>
                    <label for="vacBalnc">Vacation Balance: <input type="number" id="vacBalnc" min="0" max="100" required /> hrs</label>

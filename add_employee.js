@@ -16,10 +16,8 @@
         wgt = document.getElementById('weight').value; 
         bdtmp = document.getElementById('bodyTemp').value;
         pulsrt = document.getElementById('pulseRate').value;
-        bldprssr1 = document.getElementById('systolic');
-        systl = bldprssr1.options[bldprssr1.selectedIndex].text;
-        bldprssr2 = document.getElementById('diastolic');
-        diastl = bldprssr2.options[bldprssr2.selectedIndex].text;
+        systl = document.getElementById('systolic').value;
+        diastl = document.getElementById('diastolic').value;
         resprt = document.getElementById('respRate').value;
         avgexr = document.getElementById('avgExercise').value;
         vacbln = document.getElementById('vacBalnc').value;
