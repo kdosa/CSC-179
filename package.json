@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@vendia/client": "^0.3.3"
+  }
+}
