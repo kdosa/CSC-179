@@ -1,23 +1,30 @@
-h2{
-    text-align: center;
-    
+h2 { 
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: .8em;
 }
 
 body{
-    /*color:white;*/
-    background-color:burlywood; /*rgb(1, 1, 31); */ 
-    font-size: 20px;
+    font-size: 15px;
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
    
+    
 }
 
+label {
+   
+    padding: 0 30px;
+    
+  }
+
+
 input,select{
-    height: 20px;
+    height: 25px;
     font-size: medium;
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color:antiquewhite;
+    
     border: 1px solid burlywood;
     border-color: black;
 }
@@ -25,15 +32,14 @@ input,select{
 fieldset{
     border-style:outset;
     border-color: black;
-    
 }
 
-label{
-    display:block;
-    margin-block: 1em;
-
+button{
+    border-style:double outset;
+    padding: 5px 20px;
+    font-size: larger;
+    border-color: black;
 }
-
 a{
     color:black;
     text-decoration-line: none;
