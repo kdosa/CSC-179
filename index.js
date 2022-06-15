@@ -9,7 +9,7 @@ const client = createVendiaClient({
 const { entities } = client;
 
 
-// USE THIS TO TEST CONNECTIONS TO VENDIA
+// USE THIS TO TEST CONNECTIONS TO VENDIA  This is a test
 // Add a new employee with test data
 const response = await entities.employee.add({
     emp_id: -1,
@@ -29,7 +29,7 @@ const response = await entities.employee.add({
     workHours: -1,
   });
   
-  
+
 //USE THIS TO CREATE AN EMPLOYEE
   // Add an item with an ACL specifying that all nodes are restricted to read-only access w/out PII
 const betterResponse = await entities.employee.add
