@@ -1,0 +1,122 @@
+mutation addPeter {
+    add_Employee(
+      input: {
+        emp_id: 5, 
+        firstName: "Peter", 
+        lastName: "Lopez",
+        age: 53, 
+        genderIdentity: Man,
+        height: 59,
+        weight: 125,
+        bodyTemperature: 99.1, 
+        pulseRate: 75,
+        bloodPressureSystolic: 115, 
+        bloodPressureDiastolic: 75, 
+        respirationRate: 15,
+        exerciseHours: 5,        
+        vacationBalance: 15, 
+        workHours: 20 
+      },
+      aclInput: {
+        acl: [
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "emp_id",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "age",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "genderIdentity",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "height",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "weight",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "bodyTemperature",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "pulseRate",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "bloodPressureSystolic",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "bloodPressureDiastolic",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "respirationRate",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "exerciseHours",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "vacationBalance",
+            operations: [READ]
+          },
+          {
+            principal:{
+              nodes:["*"]
+            },
+            path: "workHours",
+            operations: [READ]
+          }
+        ]
+      }
+      syncMode: ASYNC
+     ){
+      transaction{
+        transactionId
+      }
+    }
+  }
+  
