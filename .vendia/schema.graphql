@@ -195,10 +195,10 @@ enum Vendia_SyncMode {
 }
 
 input Self_Employee_ConditionInput_ {
+  BodyTemperature: Vendia_ModelFloatInput_
   age: Vendia_ModelFloatInput_
   bloodPressureDiastolic: Vendia_ModelFloatInput_
   bloodPressureSystolic: Vendia_ModelFloatInput_
-  bodyTemperature: Vendia_ModelFloatInput_
   emp_id: Vendia_ModelFloatInput_
   exerciseHours: Vendia_ModelFloatInput_
   firstName: Vendia_ModelStringInput_
@@ -217,10 +217,10 @@ input Self_Employee_ConditionInput_ {
 
 input Self_Employee_FilterInput_ {
   _id: Vendia_ModelIDInput_
+  BodyTemperature: Vendia_ModelFloatInput_
   age: Vendia_ModelFloatInput_
   bloodPressureDiastolic: Vendia_ModelFloatInput_
   bloodPressureSystolic: Vendia_ModelFloatInput_
-  bodyTemperature: Vendia_ModelFloatInput_
   emp_id: Vendia_ModelFloatInput_
   exerciseHours: Vendia_ModelFloatInput_
   firstName: Vendia_ModelStringInput_
@@ -239,10 +239,10 @@ input Self_Employee_FilterInput_ {
 
 type Self_Employee {
   _id: ID!
+  BodyTemperature: Float
   age: Float
   bloodPressureDiastolic: Float
   bloodPressureSystolic: Float
-  bodyTemperature: Float
   emp_id: Float
   exerciseHours: Float
   firstName: String
@@ -254,16 +254,15 @@ type Self_Employee {
   vacationBalance: Float
   weight: Float
   workHours: Float
-  _acl: [Vendia_Acl!]
   _owner: String
 }
 
 type Self_Employee_Partial_ {
   _id: ID!
+  BodyTemperature: Float
   age: Float
   bloodPressureDiastolic: Float
   bloodPressureSystolic: Float
-  bodyTemperature: Float
   emp_id: Float
   exerciseHours: Float
   firstName: String
@@ -275,7 +274,6 @@ type Self_Employee_Partial_ {
   vacationBalance: Float
   weight: Float
   workHours: Float
-  _acl: [Vendia_Acl!]
   _owner: String
 }
 
@@ -288,7 +286,7 @@ type Self_Employee_Result_ {
 
 type Self_Employee_Transaction_Result_ {
   transaction: Vendia_Transaction!
-  result: Self_Employee_PartialUnion_
+  result: Self_Employee
 }
 
 type Self_Employee_Delete_Transaction_Result_ {
@@ -296,15 +294,15 @@ type Self_Employee_Delete_Transaction_Result_ {
 }
 
 type Self_Employee_Connection_ {
-  _EmployeeItems: [Self_Employee_PartialUnion_]
+  _EmployeeItems: [Self_Employee]
   nextToken: String
 }
 
 input Self_Employee_Input_ {
+  BodyTemperature: Float
   age: Float
   bloodPressureDiastolic: Float
   bloodPressureSystolic: Float
-  bodyTemperature: Float
   emp_id: Float
   exerciseHours: Float
   firstName: String
@@ -319,10 +317,10 @@ input Self_Employee_Input_ {
 }
 
 input Self_Employee_UpdateInput_ {
+  BodyTemperature: Float
   age: Float
   bloodPressureDiastolic: Float
   bloodPressureSystolic: Float
-  bodyTemperature: Float
   emp_id: Float
   exerciseHours: Float
   firstName: String
@@ -337,10 +335,10 @@ input Self_Employee_UpdateInput_ {
 }
 
 input Self_Employee_PartialInput_ {
+  BodyTemperature: Float
   age: Float
   bloodPressureDiastolic: Float
   bloodPressureSystolic: Float
-  bodyTemperature: Float
   emp_id: Float
   exerciseHours: Float
   firstName: String
@@ -1727,6 +1725,7 @@ input Vendia_File_ConditionInput_ {
   sourceKey: Vendia_ModelStringInput_
   sourceRegion: Vendia_ModelStringInput_
   sourceVersion: Vendia_ModelStringInput_
+  sourceUri: Vendia_ModelStringInput_
   destinationKey: Vendia_ModelStringInput_
   copyStrategy: Vendia_ModelStringInput_
   read: Vendia_ModelStringInput_
@@ -1747,6 +1746,7 @@ input Vendia_File_FilterInput_ {
   sourceKey: Vendia_ModelStringInput_
   sourceRegion: Vendia_ModelStringInput_
   sourceVersion: Vendia_ModelStringInput_
+  sourceUri: Vendia_ModelStringInput_
   destinationKey: Vendia_ModelStringInput_
   copyStrategy: Vendia_ModelStringInput_
   read: Vendia_ModelStringInput_
@@ -1763,10 +1763,11 @@ input Vendia_File_FilterInput_ {
 
 type Vendia_File {
   _id: ID!
-  sourceBucket: String!
-  sourceKey: String!
-  sourceRegion: String!
+  sourceBucket: String
+  sourceKey: String
+  sourceRegion: String
   sourceVersion: String
+  sourceUri: String
   destinationKey: String!
   copyStrategy: Vendia_File_copyStrategyEnum
   read: [String]
@@ -1785,6 +1786,7 @@ type Vendia_File_Partial_ {
   sourceKey: String
   sourceRegion: String
   sourceVersion: String
+  sourceUri: String
   destinationKey: String
   copyStrategy: Vendia_File_copyStrategyEnum
   read: [String]
@@ -1819,10 +1821,11 @@ type Vendia_File_Connection_ {
 }
 
 input Vendia_File_Input_ {
-  sourceBucket: String!
-  sourceKey: String!
-  sourceRegion: String!
+  sourceBucket: String
+  sourceKey: String
+  sourceRegion: String
   sourceVersion: String
+  sourceUri: String
   destinationKey: String!
   copyStrategy: Vendia_File_copyStrategyEnum
   read: [String]
@@ -1835,6 +1838,7 @@ input Vendia_File_UpdateInput_ {
   sourceKey: String
   sourceRegion: String
   sourceVersion: String
+  sourceUri: String
   destinationKey: String
   copyStrategy: Vendia_File_copyStrategyEnum
   read: [String]
@@ -1847,6 +1851,7 @@ input Vendia_File_PartialInput_ {
   sourceKey: String
   sourceRegion: String
   sourceVersion: String
+  sourceUri: String
   destinationKey: String
   copyStrategy: Vendia_File_copyStrategyEnum
   read: [String]
@@ -2507,7 +2512,7 @@ input Vendia_Contract_InvokeInput_ {
 }
 
 type Query {
-  get_Employee(id: ID!, version: Int): Self_Employee_PartialUnion_
+  get_Employee(id: ID!, version: Int): Self_Employee
   list_EmployeeItems(filter: Self_Employee_FilterInput_, limit: Int, nextToken: String): Self_Employee_Connection_
   list_EmployeeVersions(id: ID!, limit: Int, nextToken: String): Vendia_Version_Connection_
   getVendia_Block(id: ID!): Vendia_Block
@@ -2535,12 +2540,12 @@ type Query {
 }
 
 type Mutation {
-  add_Employee_async(input: Self_Employee_Input_!, aclInput: Vendia_Acls_Input_): Vendia_Transaction_Result_
-  add_Employee(input: Self_Employee_Input_!, aclInput: Vendia_Acls_Input_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
-  put_Employee_async(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_!): Vendia_Transaction_Result_
-  put_Employee(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_!, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
-  update_Employee_async(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_): Vendia_Transaction_Result_
-  update_Employee(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_, aclInput: Vendia_Acls_Input_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
+  add_Employee_async(input: Self_Employee_Input_!): Vendia_Transaction_Result_
+  add_Employee(input: Self_Employee_Input_!, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
+  put_Employee_async(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_): Vendia_Transaction_Result_
+  put_Employee(id: ID!, input: Self_Employee_Input_!, condition: Self_Employee_ConditionInput_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
+  update_Employee_async(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_): Vendia_Transaction_Result_
+  update_Employee(id: ID!, input: Self_Employee_UpdateInput_!, condition: Self_Employee_ConditionInput_, syncMode: Vendia_SyncMode!): Self_Employee_Transaction_Result_
   remove_Employee_async(id: ID!, condition: Self_Employee_ConditionInput_): Vendia_Transaction_Result_
   remove_Employee(id: ID!, condition: Self_Employee_ConditionInput_, syncMode: Vendia_SyncMode!): Self_Employee_Delete_Transaction_Result_
   addVendia_File_async(input: Vendia_File_Input_!): Vendia_Transaction_Result_

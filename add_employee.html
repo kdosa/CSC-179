@@ -79,20 +79,21 @@
                    <label for="bodyTemp">Body temperature: <input type="number" id="bodyTemp" required min="96" max="102"/> degrees F</label><br><br>
                    <label for="pulseRate">Pulse rate: <input type="number" id="pulseRate" required min="50" max="120"/> bpm</label><br><br>
                    <label for="bloodPrssr">Blood Pressure: <input type="number" id="systolic" required min="100" max="200"/> Systolic
-                                                           <input type="number" id="diastolic" required min="100" max="200"/> Diastolic</label><br><br>
+                                                           <input type="number" id="diastolic" required min="50" max="200"/> Diastolic</label><br><br>
                    <label for="respRate">Respiration rate: <input type="number" id="respRate" required min="10" max="18"/> bpm</label><br><br>
                    <label for="avgExercise">Average exercise hours/week: <input type="number" id="avgExercise" min="0" max="30" required /></label><br><br>
                    <label for="vacBalnc">Vacation Balance: <input type="number" id="vacBalnc" min="0" max="100" required /> hrs</label><br><br>
                    <label for="avgWork">Average work hours/week: <input type="number" id="avgWork" min="0" max="80" required/></label><br><br>
                 </fieldset>&emsp;&emsp;
              
-                    <button type="submit" id="click" style="margin-bottom: 30px;">Submit</button> &emsp;
+                    <button type="submit" onclick="async_name()" id="click" style="margin-bottom: 30px;">Submit</button> &emsp;
                     <button type="reset" id="clear">Clear</button> &emsp;
                     <button type="back" id="back"><a href="index.html">Back</a></button>
                 
               </form>
               
-                <script src ="add_employee.js"></script>
+                <script src ="add_employee.js">
+                </script>
         </body>
     
 </html>

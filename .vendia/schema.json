@@ -1,16 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://vendia.net/schemas/demos/employee.json",
   "title": "Employee",
   "description": "Employee data",
-  "x-vendia-acls": {
-    "EmployeeAcl": {
-      "type": "Employee"
-    }
-  },
   "type": "object",
   "properties": {
     "Employee": {
-      "description": "Employee Data",
+      "description": "Employee data",
       "type": "array",
       "items": {
         "type": "object",
@@ -50,7 +46,7 @@
             "description": "Weight",
             "type": "number"
           },
-          "bodyTemperature": {
+          "BodyTemperature": {
             "description": "Body temperature",
             "type": "number"
           },
