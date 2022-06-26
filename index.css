@@ -7,7 +7,7 @@
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
   }
-  h1 { 
+  h2 { 
     margin-top: 0.67em;
     margin-bottom: 0.67em;
     margin-left: 1.7em;
