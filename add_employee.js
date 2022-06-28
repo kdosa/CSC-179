@@ -1,4 +1,4 @@
-import { createVendiaClient } from '@vendia/client';
+/*import { createVendiaClient } from '@vendia/client';
 
 const client = createVendiaClient({
   apiUrl: `https://arimkqyeak.execute-api.us-west-2.amazonaws.com/graphql/`,
@@ -26,7 +26,7 @@ async function async_remove() {
 //async_remove();
 
 
-
+/*
 export async function async_add() {
     console.log('Calling async_remove function');
     const employeeResponse = await entities.employee.add(
@@ -50,12 +50,11 @@ export async function async_add() {
     );
     console.log(employeeResponse);
 }
+*/
 //async_add();
 
 //let add = document.getElementById("click");
 //add.addEventListener("click", async_add);
-
-
 
 
 /*
@@ -187,15 +186,14 @@ add.addEventListener("click", () =>
 */
 
 
-/*
+
    //form can be filled and stored on local storage 
     // run this command "localStorage.getItem('itemsJson')" on console
     // to check the data submitted on form 
-    
-    add = document.getElementById("click");
-
-    add.addEventListener("click", ()=>{
-        emId = document.getElementById('id').value;
+    add = document.getElementById("add");
+    function update(){
+        console.log("Updating...");
+        //emId = document.getElementById('id').value;
         fnm = document.getElementById('firstName').value;
         lnm = document.getElementById('lastName').value;
         ag = document.getElementById('age').value;
@@ -213,16 +211,59 @@ add.addEventListener("click", () =>
         avgwrk = document.getElementById('avgWork').value;
 
     
-        if(localStorage.getItem('itemsJson')==null){
+        if(localStorage.getItem('itemsJson')==null)
+        {
             itemJsonArray =[];
-            itemJsonArray.push([emId, fnm, lnm, ag, gen, hgt, wgt, bdtmp, pulsrt, systl, diastl, resprt, avgexr, vacbln, avgwrk]);
+            itemJsonArray.push([fnm, lnm, ag, gen, hgt, wgt, bdtmp, pulsrt, systl, diastl, resprt, avgexr, vacbln, avgwrk]);
             localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
         }
-        else{
+        else
+        {
             itemJsonArrayStr =localStorage.getItem('itemsJson');
             itemJsonArray = JSON.parse(itemJsonArrayStr);
-            itemJsonArray.push([emId, fnm, lnm, ag, gen, hgt, wgt, bdtmp, pulsrt, systl, diastl, resprt, avgexr, vacbln, avgwrk]);
+            itemJsonArray.push([fnm, lnm, ag, gen, hgt, wgt, bdtmp, pulsrt, systl, diastl, resprt, avgexr, vacbln, avgwrk]);
             localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
         }
-    })
- */
+
+   
+        //this will show up the data values on dashboard  <td>${element[13]}</td> onclick="sharing(${index})" <td><button type="submit" class="btn-sm btn-primary">Share</button></td>
+
+        showTable = document.getElementById("showTable");
+        str = "";
+        itemJsonArray.forEach((element, index) => {
+            str += `
+            <tr>
+            <th scope="row">${index + 1}</th>
+            <td>${element[0]}</td>
+            <td>${element[1]}</td>
+            <td>${element[2]}</td>
+            <td>${element[3]}</td>
+            <td>${element[4]}</td>
+            <td>${element[5]}</td>
+            <td>${element[6]}</td>
+            <td>${element[7]}</td>
+            <td>${element[8]}</td>
+            <td>${element[9]}</td>
+            <td>${element[10]}</td>
+            <td>${element[11]}</td>
+            <td>${element[12]}</td>
+            
+    
+            </tr>`;
+
+            });
+            showTable.innerHTML = str;
+
+    }
+    
+    add.addEventListener("click", update);
+    update();
+
+    /*
+    function sharing(item){
+        console.log("Share", item);
+        itemJsonArrayStr
+    }
+        */
+
+
