@@ -188,12 +188,14 @@ add.addEventListener("click", () =>
 
 
    //form can be filled and stored on local storage 
-    // run this command "localStorage.getItem('itemsJson')" on console
-    // to check the data submitted on form 
+
     add = document.getElementById("add");
     function update(){
+
         console.log("Updating...");
-        //emId = document.getElementById('id').value;
+        add.addEventListener("click", (e) => {
+            e.preventDefault();
+    
         fnm = document.getElementById('firstName').value;
         lnm = document.getElementById('lastName').value;
         ag = document.getElementById('age').value;
@@ -225,8 +227,8 @@ add.addEventListener("click", () =>
             localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
         }
 
-   
-        //this will show up the data values on dashboard  <td>${element[13]}</td> onclick="sharing(${index})" <td><button type="submit" class="btn-sm btn-primary">Share</button></td>
+
+        //this will show up the entered data values on dashboard  
 
         showTable = document.getElementById("showTable");
         str = "";
@@ -252,10 +254,12 @@ add.addEventListener("click", () =>
             </tr>`;
 
             });
+        
             showTable.innerHTML = str;
+        })
 
     }
-    
+
     add.addEventListener("click", update);
     update();
 
